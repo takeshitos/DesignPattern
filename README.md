@@ -5,10 +5,12 @@
 Lista 1 - Implementação Design Pattern
 
 Decorator (Estrutural):
-Por que foi usado: O padrão Decorator foi escolhido para permitir que a funcionalidade de log seja adicionada à adição e remoção de contatos sem modificar o código existente na classe GerenciadorContatos. Permitindo estender o comportamento desses métodos sem modificar sua implementação original.
-Como foi usado: Criei a classe GerenciadorContatosComLog, que age como um decorador para a classe GerenciadorContatos. Essa classe adiciona a funcionalidade de log aos métodos adicionarContato e removerContato, delegando a execução dos métodos originais e adicionando o log conforme necessário.
+Por que foi usado: O padrão Decorator foi escolhido para permitir que a funcionalidade de log seja adicionada à adição e remoção de contatos sem modificar o código existente na classe GerenciadorContatos. Permitindo estender o comportamento desses métodos sem modificar sua implementação original. A adição dessa funcionalidade de log é útil para rastrear e registrar as operações realizadas no sistema de gerenciamento de contatos, o que pode ser útil para depuração, auditoria ou simplesmente para fornecer feedback ao usuário sobre suas ações.
+
+Como foi usado: Criei a classe GerenciadorContatosComLog, que age como um decorador para a classe GerenciadorContatos. Essa classe adiciona a funcionalidade de log aos métodos adicionarContato e removerContato, delegando a execução dos métodos originais e adicionando o log conforme necessário. 
 
 Strategy (Comportamental):
 Por que foi usado: O padrão Strategy foi escolhido para implementar a funcionalidade de busca de contatos, permitindo que os algoritmos de busca variem independentemente da implementação principal da funcionalidade de busca de contatos. Isso é útil porque torna a funcionalidade de busca de contatos mais flexível e reutilizável, permitindo que diferentes algoritmos de busca sejam facilmente intercambiáveis.
+
 Como foi usado: Criamos a classe BuscaPorNomeStrategy para representar o algoritmo de busca de contatos por nome. Isso permite que outras estratégias de busca possam ser adicionadas no futuro, mantendo a interface comum buscar para realizar a busca. Em seguida, utilizamos a estratégia de busca por nome no método buscarContato do arquivo index.js, permitindo que os usuários busquem contatos por nome.
 
