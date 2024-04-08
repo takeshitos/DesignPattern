@@ -12,5 +12,5 @@ Como foi usado: Criei a classe GerenciadorContatosComLog, que age como um decora
 Strategy (Comportamental):
 Por que foi usado: O padrão Strategy foi escolhido para implementar a funcionalidade de busca de contatos, permitindo que os algoritmos de busca variem independentemente da implementação principal da funcionalidade de busca de contatos. Isso é útil porque torna a funcionalidade de busca de contatos mais flexível e reutilizável, permitindo que diferentes algoritmos de busca sejam facilmente intercambiáveis.
 
-Como foi usado: Criamos a classe BuscaPorNomeStrategy para representar o algoritmo de busca de contatos por nome. Isso permite que outras estratégias de busca possam ser adicionadas no futuro, mantendo a interface comum buscar para realizar a busca. Em seguida, utilizamos a estratégia de busca por nome no método buscarContato do arquivo index.js, permitindo que os usuários busquem contatos por nome.
+Como foi usado: Criei a classe BuscaPorNomeStrategy para representar o algoritmo de busca de contatos por nome. Isso permite que outras estratégias de busca possam ser adicionadas no futuro, mantendo a interface comum buscar para realizar a busca. Em seguida, utilizamos a estratégia de busca por nome no método buscarContato do arquivo index.js, permitindo que os usuários busquem contatos por nome.
 
