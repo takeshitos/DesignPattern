@@ -57,11 +57,17 @@ function buscarContato() {
     });
 }
 
+function sair() {
+    console.log('Saindo do programa.');
+    rl.close();
+}
+
 rl.setPrompt(`
-1. Adicionar Contato
-2. Remover Contato
-3. Listar Contatos
-4. Buscar Contato
+1- Adicionar Contato
+2- Remover Contato
+3- Listar Contatos
+4- Buscar Contato
+5- Sair
 Escolha uma opção: `);
 
 rl.prompt();
@@ -79,6 +85,9 @@ rl.on('line', (input) => {
             break;
         case '4':
             buscarContato();
+            break;
+        case '5':
+            sair();
             break;
         default:
             console.log('Opção inválida!');

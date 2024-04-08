@@ -1,5 +1,7 @@
 # DesignPattern
 
+<Aluno: Ricardo Takeshi Outi Miyamoto RA:2348144>
+
 Lista 1 - Implementação Design Pattern
 
 Decorator (Estrutural):
