@@ -1,6 +1,6 @@
 # DesignPattern
 
-<Aluno: Ricardo Takeshi Outi Miyamoto RA:2348144>
+<h1 align="center"> Ricardo Takeshi Outi Miyamoto RA:2348144 </h1>
 
 Lista 1 - Implementação Design Pattern
 

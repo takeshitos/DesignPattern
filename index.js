@@ -3,6 +3,7 @@ const Contato = require('./Contato');
 const { GerenciadorContatos, GerenciadorContatosComLog } = require('./GerenciadorContatos');
 const BuscaPorNomeStrategy = require('./buscaStrategy');
 
+// Cria uma interface de leitura e escrita
 const rl = readline.createInterface({
     input: process.stdin,
     output: process.stdout
@@ -12,11 +13,13 @@ const gerenciador = new GerenciadorContatos();
 const gerenciadorComLog = new GerenciadorContatosComLog(gerenciador);
 const buscaPorNomeStrategy = new BuscaPorNomeStrategy();
 
+// Função para adicionar um novo contato
 function adicionarContato() {
     rl.question('Nome: ', (nome) => {
         rl.question('Telefone: ', (telefone) => {
             rl.question('Email: ', (email) => {
                 const novoContato = new Contato(nome, telefone, email);
+                // Adiciona o novo contato usando o gerenciador de contatos com log
                 gerenciadorComLog.adicionarContato(novoContato);
                 console.log('Contato adicionado com sucesso!');
                 rl.prompt();
@@ -25,14 +28,17 @@ function adicionarContato() {
     });
 }
 
+// Função para remover um contato existente
 function removerContato() {
     rl.question('Nome do contato a ser removido: ', (nome) => {
+         // Remove o contato usando o gerenciador de contatos com log
         gerenciadorComLog.removerContato(nome);
         console.log('Contato removido com sucesso!');
         rl.prompt();
     });
 }
 
+// Função para listar todos os contatos
 function listarContatos() {
     const contatos = gerenciador.listarContatos();
     console.log("Contatos:");
@@ -42,8 +48,10 @@ function listarContatos() {
     rl.prompt();
 }
 
+// Função para buscar um contato por nome
 function buscarContato() {
     rl.question('Nome do contato a ser buscado: ', (nome) => {
+         // Usa a estratégia de busca por nome para buscar o contato
         const contatosEncontrados = buscaPorNomeStrategy.buscar(gerenciador.listarContatos(), nome);
         if (contatosEncontrados.length > 0) {
             console.log("Contatos encontrados:");
@@ -57,11 +65,13 @@ function buscarContato() {
     });
 }
 
+// Função para sair do programa
 function sair() {
     console.log('Saindo do programa.');
     rl.close();
 }
 
+// Configura o prompt inicial
 rl.setPrompt(`
 1- Adicionar Contato
 2- Remover Contato
@@ -72,6 +82,7 @@ Escolha uma opção: `);
 
 rl.prompt();
 
+// Evento que escuta a entrada do usuário
 rl.on('line', (input) => {
     switch (input.trim()) {
         case '1':
